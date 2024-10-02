@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card img {
+  height: 200px; /* ปรับขนาดความสูง */
+  width: 240px;  /* ปรับขนาดความกว้าง */
+  object-fit: cover; /* เพื่อให้ภาพไม่เสียสัดส่วน */
+  border-radius: 0.5rem; /* ขอบมน */
+  transition: transform 0.3s ease; /* ทำให้การเปลี่ยนแปลงนุ่มนวล */
+  
+}
+
+.card img.zoomed {
+  transform: scale(1.5); /* ขยายภาพ */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* ทำให้การ์ดเรียงกันในหลายแถว */
+  justify-content: space-between; /* จัดการ์ดให้กระจายตัวในแนวนอน */
+}
+
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+  width: 240px; 
+  margin-bottom: 20px; /* ระยะห่างด้านล่าง */
+  margin-left: 25px; /* ระยะห่างจากขอบซ้าย */
+  margin-right: 25px; /* ระยะห่างจากขอบขวา */
+  display: flex; /* ใช้ flexbox */
+  flex-direction: column; /* เรียงเนื้อหาในแนวตั้ง */
+  align-items: center; /* จัดให้เนื้อหาตรงกลางในแนวนอน */
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+}
+
+.card h3 {
+  font-size: 16px; /* ปรับขนาดตัวหนังสือของชื่อสินค้า */
+  text-align: left;
+  font-weight: lighter;
+  margin-left: 5px; /* ระยะห่างจากขอบซ้าย */
+  margin-right: 5px; /* ระยะห่างจากขอบขวา */
+}
+
+.card p {
+  font-size: 20px; /* ปรับขนาดตัวหนังสือของราคา */
+  margin-left: auto;    /* ดันราคาไปที่ขวา */
+  margin-right: 5px; /* ระยะห่างจากขอบซ้าย */
+  font-weight: bold;
+  color: #ff8800;
+}
+
+.small-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+h1 {
+  text-align: center; /* จัดกลางข้อความ */
+  font-size: 50px;
+  color: #000;
+}
+h2 {
+  margin-left: 25px; /* ระยะห่างจากขอบซ้าย */
+}
+/* ปรับให้แน่นอนสำหรับหน้าจอเล็ก */
+@media (max-width: 768px) {
+  .card {
+    width: calc(45% - 1%); /* เปลี่ยนเป็น 2 ชิ้นต่อแถว */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 1%); /* เปลี่ยนเป็น 1 ชิ้นต่อแถว */
+  }
+}
